@@ -25,6 +25,7 @@ const Menu: React.VoidFunctionComponent<{ className: string }> = ({
   const { pathname } = useRouter();
   const { t } = useTranslation("common");
   return (
+    <div></div>
   );
 };
 
