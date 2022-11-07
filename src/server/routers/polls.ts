@@ -151,7 +151,7 @@ export const polls = createRouter()
           await sendEmailTemplate({
             templateName: "new-poll-verified",
             to: input.user.email,
-            subject: `Rallly: ${poll.title}`,
+            subject: `Poll: ${poll.title}`,
             templateVars: {
               title: poll.title,
               name: input.user.name,
@@ -169,7 +169,7 @@ export const polls = createRouter()
           await sendEmailTemplate({
             templateName: "new-poll",
             to: input.user.email,
-            subject: `Rallly: ${poll.title} - Verify your email address`,
+            subject: `Poll: ${poll.title} - Verify your email address`,
             templateVars: {
               title: poll.title,
               name: input.user.name,
