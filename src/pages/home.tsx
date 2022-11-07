@@ -1,12 +1,13 @@
-import { GetStaticProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { GetServerSideProps } from "next";
+import dynamic from "next/dynamic";
 
-export { default } from "@/components/home";
+import { withSessionSsr } from "../utils/auth";
+import { withPageTranslations } from "../utils/with-page-translations";
 
-export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common", "homepage"])),
-    },
-  };
-};
+export const getServerSideProps: GetServerSideProps = withSessionSsr(
+  withPageTranslations(["common", "app"]),
+);
+
+export default dynamic(() => import("@/components/create-poll"), {
+  ssr: false,
+});
