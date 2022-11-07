@@ -98,7 +98,6 @@ const PageLayout: React.VoidFunctionComponent<PageLayoutProps> = ({
         ) : null}
       </div>
       <div className="md:min-h-[calc(100vh-460px)]">{children}</div>
-      <Footer />
     </div>
   );
 };

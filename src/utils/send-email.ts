@@ -29,7 +29,7 @@ export const sendEmail = async (params: SendEmailParameters) => {
     await transport.verify();
     return await transport.sendMail({
       to: params.to,
-      from: `Rallly ${process.env.SUPPORT_EMAIL}`,
+      from: `Peinser ${process.env.SUPPORT_EMAIL}`,
       subject: params.subject,
       html: params.html,
     });
